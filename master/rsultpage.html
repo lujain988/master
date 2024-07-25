@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Wedding Planner</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .search-item {
+            display: flex;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .search-item-img img {
+            border-radius: 50%;
+            filter: grayscale(100%);
+        }
+        .search-item-content {
+            margin-left: 20px;
+        }
+        .search-item-caption a {
+            text-decoration: none;
+            color: #000;
+        }
+        .search-item-caption a:hover {
+            text-decoration: underline;
+            color: #555;
+        }
+        .search-item-meta {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .search-item-meta ul {
+            padding-left: 0;
+        }
+        .search-form input[type="text"] {
+            background-color: #eee;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+        .pagination .page-link {
+            background-color: #eee;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+        .pagination .page-link:hover {
+            background-color: #ccc;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #ccc;
+            border-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 left-side-sidebar">
+            <div class="row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Not happy with the results?</h3>
+                    <p class="body-text-3x">Type your search again</p>
+                    <div class="small-search-wrap">
+                        <div class="search-form">
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Search something here" maxlength="100" class="form-control" id="search-bar">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr class="invisible small">
+                </div>
+                <div class="col-md-12">
+                    <div class="v-heading-v2">
+                        <h4 class="v-search-result-count" id="results-count"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix mt-40">
+                <ul class="xsearch-items" id="results-list">
+                    <!-- Sample result item -->
+                    <li class="search-item">
+                        <div class="search-item-img">
+                            <a href="#">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="70" height="70">
+                            </a>
+                        </div>
+                        <div class="search-item-content">
+                            <h3 class="search-item-caption"><a href="#">10 tips for planning the perfect wedding</a></h3>
+                            <div class="search-item-meta mb-15">
+                                <ul class="list-inline">
+                                    <li class="time">November 10, 2023</li>
+                                    <li><a href="#">0 Comments</a></li>
+                                    <li class="pr-0">in</li>
+                                    <li class="pl-0"><a href="#">Planning</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                Planning the perfect wedding involves attention to detail, organization, and creativity. Here are ten tips to help you create a memorable and beautiful event.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- More result items here -->
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="clearfix pl-90">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-double-left"></i> </a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">..</a></li>
+                            <li class="page-item"><a class="page-link" href="#">20</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-double-right"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="clearfix pull-right">
+                        <span class="o-7">Page 1 of 8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('query');
+        if (query) {
+            document.getElementById('search-bar').value = query;
+            performSearch(query);
+        }
+
+        function performSearch(query) {
+            const resultsList = document.getElementById('results-list');
+            const resultsCount = document.getElementById('results-count');
+            resultsList.innerHTML = '';
+
+            if (query.trim() === '') {
+                resultsCount.innerText = 'No results found.';
+                resultsList.innerHTML = '<li>No results found.</li>';
+                return;
+            }
+
+            const elements = document.querySelectorAll('body *:not(script):not(style)');
+            let found = false;
+            let count = 0;
+
+            elements.forEach(element => {
+                if (element.innerText.toLowerCase().includes(query.toLowerCase())) {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'search-item';
+                    listItem.innerHTML = `
+                        <div class="search-item-img">
+                            <a href="#">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="70" height="70">
+                            </a>
+                        </div>
+                        <div class="search-item-content">
+                            <h3 class="search-item-caption"><a href="#">${element.innerText}</a></h3>
+                        </div>
+                    `;
+                    resultsList.appendChild(listItem);
+                    found = true;
+                    count++;
+                }
+            });
+
+            if (found) {
+                resultsCount.innerText = `About ${count} results`;
+            } else {
+                resultsCount.innerText = 'No results found.';
+                resultsList.innerHTML = '<li>No results found.</li>';
+            }
+        }
+
+        document.getElementById('search-bar').addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                const query = event.target.value;
+                if (query.trim()) {
+                    performSearch(query);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
