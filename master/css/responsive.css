@@ -24,6 +24,7 @@ File Name: responsive.css
     .slider_main {
         padding-top: 11%;
     }
+    
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -105,6 +106,21 @@ File Name: responsive.css
     .d_none,
     ul.top_infomation {
         display: none !important;
+    }
+    .header-form {
+        width: 84%;
+        max-width: 1184px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 46px 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+        margin-bottom: 85px;
+        height: 87%;
+    }
+    .read_more {
+        color: #fff !important;
     }
 }
 
@@ -190,4 +206,19 @@ File Name: responsive.css
     ul.top_infomation {
         display: none !important;
     }
+    .header-form {
+        width: 84%;
+        max-width: 1184px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 46px 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+        margin-bottom: 85px;
+        height: 87%;
+    }
+   .read_more {
+    color: #fff !important;
+}
 }
