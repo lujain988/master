@@ -1,358 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhiteAura</title>
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css"
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
   
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css and js/aboutstyle.css" />
-  </head>
-  <body>
-    <header>
-      <nav id="navbar">
-        <div class="nav-content">
-          <ul class="nav-links left">
-            <li><a href="index.html">Home</a></li>
+<style>
+     body {
+        background-color: azure !important;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        margin-bottom: 0;
+      }
+
+      /* Navigation Bar Styles */
+      #navbar {
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+      }
+
+      #navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
+      }
+      
+      #navbar .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      #navbar .nav-links {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #navbar .nav-links li {
+        margin: 0 10px;
+      }
+      
+      #navbar .nav-links a {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      
+      #navbar .logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      #navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+      
+      #navbar .logo-text {
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      
+      #navbar .burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      
+      #navbar .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 3px 0;
+      }
+      #navbar .logo img {
+        height: 71px;}
+      
+      @media (max-width: 768px) {
+        #navbar .nav-links {
+          display: none;
+        }
+        
+        #navbar .burger {
+          display: flex;
+        }
+        
+        #navbar.active .nav-links {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        #navbar.active .nav-links li {
+          margin: 10px 0;
+        }
+      }
+      
+      .cascading-right {
+        margin-right: -50px;
+      }
+      
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+
+      /* Ensure no space between navbar and content */
+      .container {
+        padding-top: 80px; /* Adjust based on navbar height */
+      }
+</style>
+</head>
+<body style="background-color: rgba(143, 150, 150, 0.199) !important;"> 
+    <header style="height: auto;">
+        <nav id="navbar" >
+          <div class="nav-content" >
+            <ul class="nav-links left">
+              <li><a href="../index.html">Home</a></li>
+               <li><a href="about.html">About</a></li>
+              <li><a href="Services.html">Services</a></li>
+            </ul>
+            <a href="#" class="logo">
+              <img src="pic/logo1.png" alt="WhiteAura" />
+              <span class="logo-text">WhiteAura</span>
+            </a>
+            <ul class="nav-links right" >
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="contactus.html">Contact</a></li>
+              <li class="search-container" onclick="expandSearch()">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" placeholder="Search..." class="search-bar" />
+              </li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="signup.html">Register</a></li>
+            </ul>
+            <div class="burger" onclick="toggleNav()">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </nav>
+  
+        <div id="side-nav" class="side-nav">
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
+            >&times;</a
+          >
+          <img src="pic/logo2.png" alt="Alternate Logo" class="side-logo" />
+          <ul class="side-nav-links">
+            <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="Services.html">Services</a></li>
-          </ul>
-          <a href="#" class="logo">
-            <img src="pic/logo1.png" alt="WhiteAura" />
-            <span class="logo-text">WhiteAura</span>
-          </a>
-          <ul class="nav-links right">
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="contactus.html">Contact</a></li>
-            <li class="search-container" onclick="expandSearch()">
+            <li class="search-container">
               <span class="search-icon">&#128269;</span>
               <input type="text" placeholder="Search..." class="search-bar" />
             </li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Register</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
           </ul>
-          <div class="burger" onclick="toggleNav()">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
         </div>
-      </nav>
-
-      <div id="side-nav" class="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
-          >&times;</a
-        >
-        <img src="pic/logo2.png" alt="Alternate Logo" class="side-logo" />
-        <ul class="side-nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="contactus.html">Contact</a></li>
-          <li class="search-container">
-            <span class="search-icon">&#128269;</span>
-            <input type="text" placeholder="Search..." class="search-bar" />
-          </li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Register</a></li>
-        </ul>
-      </div>
-      <div class="header-content">
-        <img
-          src="pic/abouthead.jpg"
-          alt="Bride"
-          class="header-image"
-        />
-        <div class="about-section">
-          <h1>About Us</h1>
-          <div class="icon">
-            <img src="pic/business.png" alt="Diamond Icon" />
-          </div>
-        </div>
-      </div>
+       
     </header>
-    <div class="additional-section">
-      <h2>Looking for Perfection?</h2>
-      <h3>We Are Here To Help You</h3>
-      <p>
-        Our team at WhiteAura is committed to delivering flawless wedding
-        experiences tailored to your dreams. From the initial planning stages to
-        the final execution, we ensure every detail is perfect. Let's make your
-        special day unforgettable.
-      </p>
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon">
-            <img src="pic/collabrate.jpg" alt="Collaborate Icon" />
-          </div>
-          <h4>Collaborate With Us</h4>
-          <p>
-            Work closely with our expert planners to bring your vision to life.
-          </p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <img src="pic/palce.png" alt="Destination Icon" />
-          </div>
-          <h4>Choose Your Marveling Place to Marry</h4>
-          <p>
-            Choose from a range of beautiful destinations for your dream
-            wedding.
-          </p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <img src="pic/plannung.jpg" alt="Planning Icon" />
-          </div>
-          <h4>Start Planning</h4>
-          <p>
-            Begin your journey with our seamless and stress-free planning
-            process.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="slider">
-      <div class="slide active">
-        <img
-          src="pic/wed.jpg"
-          alt="Wedding Scene"
-          style="width: 100%; height: 100%"
-        />
-        <div class="content">
-          <h1>Welcome to WhiteAura</h1>
-          <p>Your Dream Wedding, Our Passion</p>
-          <p>Experience personalized wedding planning with us.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img
-          src="pic/we.jpg"
-          alt="Services"
-          style="width: 100%; height: 100%"
-        />
-        <div class="content">
-          <h1>Our Exclusive Services</h1>
-          <p>Comprehensive Wedding Planning</p>
-          <p>Venue Selection, Decor, Catering, and More</p>
-          <p>Tailored to Your Vision</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img
-          src="pic/w.jpg"
-          alt="Client Testimonials"
-          style="width: 100%; height: 100%"
-        />
-        <div class="content">
-          <h1>Hear From Our Happy Clients</h1>
-          <p>"WhiteAura made our wedding day unforgettable!" - Emily & John</p>
-          <p>
-            "Professional, creative, and stress-free planning!" - Sarah &
-            Michael
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="our-story-philosophy-section">
-      <div class="section-content">
-        <h2>Our Story</h2>
-        <p>
-          WhiteAura was founded with the vision of creating unforgettable
-          wedding experiences. Our journey began when our founder, [Founder's
-          Name], realized the need for a personalized touch in wedding planning.
-          Over the years, we have grown into a team of dedicated professionals
-          who share a passion for making dreams come true.
-        </p>
-      </div>
-      <div class="section-content">
-        <h2>Our Philosophy</h2>
-        <p>
-          At WhiteAura, we believe that every wedding should be a unique
-          reflection of the couple's love story. Our philosophy is rooted in
-          personalized service, attention to detail, and a passion for
-          perfection. We are committed to making your wedding day as special and
-          memorable as you have always dreamed.
-        </p>
-      </div>
-    </div>
-
-    <div class="location-contact-section">
-      <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> contact@whiteaura.com</p>
-        <p><strong>Phone:</strong> (123) 456-7890</p>
-        <p>
-          <strong>Office Address:</strong> 123 Wedding Lane, Bridal City, ST
-          12345
-        </p>
-        <p><strong>Additional Phone:</strong> (987) 654-3210</p>
-        <p><strong>Business Hours:</strong> Mon-Fri 9:00 AM - 6:00 PM</p>
-      </div>
-      <div class="location">
-        <h2 style="color: aliceblue">Our Location</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.2983675803857!2d35.8514775!3d32.5576395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca3e51e8f44a9%3A0x7d618d75f0dc11e8!2sIrbid%2C%20Jordan!5e0!3m2!1sen!2sjo!4v1617708584711!5m2!1sen!2sjo"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
-    <!-- FAQ Section - Bootstrap Accordion Component -->
-<section class="bg-light py-3 py-md-5">
-  <div class="container">
-    <div class="row gy-5 gy-lg-0 align-items-lg-center">
-      <div class="col-12 col-lg-6">
-        <img class="img-fluid rounded" loading="lazy" src="pic/Qa.jpg" alt="How can we help you?">
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="row justify-content-xl-end">
-          <div class="col-12 col-xl-11">
-            <h2 class="h1 mb-3" style="color: black;">How can we help you?</h2>
-            <p class="lead fs-4 text-secondary mb-5">Find answers to common questions about our wedding planning services. If you need further assistance, please feel free to contact us.</p>
-            <div class="accordion accordion-flush" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    What Services Do You Offer?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>At WhiteAura, we offer a comprehensive range of wedding planning services, including:</p>
-                    <ul>
-                      <li>Full-service wedding planning</li>
-                      <li>Day-of coordination</li>
-                      <li>Venue selection and booking</li>
-                      <li>Decor and floral design</li>
-                      <li>Catering and menu planning</li>
-                      <li>Entertainment and music arrangement</li>
-                      <li>Photography and videography services</li>
-                      <li>Custom wedding invitations and stationery</li>
-                    </ul>
-                  </div>
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right bg-body-tertiary" style="
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Login</h2>
+              <form>
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" id="form3Example3" class="form-control" />
+                  <label class="form-label" for="form3Example3">Email address</label>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    How Far In Advance Should We Book Your Services?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    We recommend booking our services at least 6-12 months in advance. This allows ample time for thorough planning and ensures that we can secure the best vendors and venues for your special day.
-                  </div>
+  
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="form3Example4" class="form-control" />
+                  <label class="form-label" for="form3Example4">Password</label>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    What Is Your Pricing Structure?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Our pricing structure varies based on the scope of services required. We offer customizable packages to suit different needs and budgets. For detailed pricing information, please contact us directly for a consultation.</p>
-                  </div>
+  
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                  <label class="form-check-label" for="form2Example33">
+                    Remember me
+                  </label>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Can You Help With Destination Weddings?
+  
+                <!-- Submit button -->
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block mb-4">
+                  Login
+                </button>
+  <p>Don't have an account? <a href="signup.html" style="text-decoration: none;">Signup</a></p>
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>or login with:</p>
+                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="bi bi-facebook" style="color: rgb(0, 0, 0);"></i>
                   </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Yes, we specialize in planning destination weddings. Whether you dream of a beach wedding or a romantic ceremony in a historic city, we can help you find the perfect location and handle all the logistics to make your destination wedding a success.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    How Do We Start The Planning Process?
+  
+                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="bi bi-google" style="color: rgb(0, 0, 0);"></i>
                   </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>To start the planning process, please contact us to schedule a consultation. During this initial meeting, we will discuss your vision, preferences, and budget to create a customized wedding plan that reflects your unique style and needs.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Do You Offer Day-Of Coordination?
+  
+                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="bi bi-twitter" style="color: rgb(0, 0, 0);"></i>
                   </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Yes, we offer day-of coordination services to ensure that everything runs smoothly on your wedding day. Our team will be on-site to manage the timeline, coordinate vendors, and handle any last-minute details, so you can relax and enjoy your special day.
-                  </div>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSeven">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    What Safety Measures Do You Have In Place Due To COVID-19?
-                  </button>
-                </h2>
-                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Your safety is our priority. We adhere to all local health guidelines and have implemented additional safety measures, such as ensuring all vendors wear masks, providing hand sanitizing stations, and maintaining social distancing during events.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingEight">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                    How Can We Contact You For More Information?
-                  </button>
-                </h2>
-                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>You can contact us via email at contact@whiteaura.com or by phone at (123) 456-7890. We are also available for consultations by appointment at our office located at 123 Wedding Lane, Bridal City, ST 12345.</p>
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
-            <!-- End of Accordion -->
           </div>
         </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="pic/wdd.jpg" class="w-100 rounded-4 shadow-4" alt="" />
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Footer Section -->
-    <footer
+    </div> 
+    <!-- Jumbotron -->
+  </section>
+      <!-- Footer Section -->
+      <footer
       class="py-4 py-md-5 bg-black position-relative"
       style="
         background-image: url('pic/white.jpeg');
@@ -518,7 +426,7 @@
                   <ul class="m-0 list-unstyled">
                     <li class="mb-1">
                       <a
-                        href="index.html"
+                        href="../index.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Home</a
                       >
@@ -654,12 +562,13 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Section: Design Block -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="css and js/script.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
 </html>

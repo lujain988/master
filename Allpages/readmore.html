@@ -1,149 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  
-    <link href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WhiteAura Wedding Planner</title>
+
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
+    <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css"
+  />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css and js/styless.css">
+
+    <!-- favicons -->
     <link rel="stylesheet" href="css and js/aboutstyle.css" />
-<style>
-     body {
-        background-color: azure !important;
-        margin: 0;
-        padding: 0;
-      }
-      
-      header {
-        margin-bottom: 0;
-      }
-
-      /* Navigation Bar Styles */
-      #navbar {
-        background-color: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        padding: 10px 20px;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-      }
-
-      #navbar.scrolled {
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(5px);
-      }
-      
-      #navbar .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      #navbar .nav-links {
-        list-style: none;
-        display: flex;
-        padding: 0;
-        margin: 0;
-      }
-      
-      #navbar .nav-links li {
-        margin: 0 10px;
-      }
-      
-      #navbar .nav-links a {
-        color: black;
-        text-decoration: none;
-        font-size: 16px;
-      }
-      
-      #navbar .logo {
-        display: flex;
-        align-items: center;
-      }
-      
-      #navbar .logo img {
-        height: 40px;
-        margin-right: 10px;
-      }
-      
-      #navbar .logo-text {
-        color: black;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      
-      #navbar .burger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-      }
-      
-      #navbar .burger div {
-        width: 25px;
-        height: 3px;
-        background-color: black;
-        margin: 3px 0;
-      }
-      #navbar .logo img {
-        height: 71px;}
-      
-      @media (max-width: 768px) {
-        #navbar .nav-links {
-          display: none;
-        }
-        
-        #navbar .burger {
-          display: flex;
-        }
-        
-        #navbar.active .nav-links {
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 60px;
-          left: 0;
-          width: 100%;
-          background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        #navbar.active .nav-links li {
-          margin: 10px 0;
-        }
-      }
-      
-      .cascading-right {
-        margin-right: -50px;
-      }
-      
-      @media (max-width: 991.98px) {
-        .cascading-right {
-          margin-right: 0;
-        }
-      }
-
-      /* Ensure no space between navbar and content */
-      .container {
-        padding-top: 80px; /* Adjust based on navbar height */
-      }
-</style>
 </head>
-<body style="background-color: rgba(143, 150, 150, 0.199) !important;"> 
-    <header style="height: auto;">
-        <nav id="navbar" >
-          <div class="nav-content" >
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+          <div class="nav-content">
             <ul class="nav-links left">
-              <li><a href="index.html">Home</a></li>
-               <li><a href="about.html">About</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
               <li><a href="Services.html">Services</a></li>
             </ul>
             <a href="#" class="logo">
               <img src="pic/logo1.png" alt="WhiteAura" />
               <span class="logo-text">WhiteAura</span>
             </a>
-            <ul class="nav-links right" >
+            <ul class="nav-links right">
               <li><a href="#">Portfolio</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="contactus.html">Contact</a></li>
@@ -168,7 +74,7 @@
           >
           <img src="pic/logo2.png" alt="Alternate Logo" class="side-logo" />
           <ul class="side-nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="Services.html">Services</a></li>
             <li><a href="#">Portfolio</a></li>
@@ -178,89 +84,88 @@
               <span class="search-icon">&#128269;</span>
               <input type="text" placeholder="Search..." class="search-bar" />
             </li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Register</a></li>
           </ul>
         </div>
-       
-    </header>
-<section class="text-center text-lg-start">
-    <style>
-      .cascading-right {
-        margin-right: -50px;
-      }
-  
-      @media (max-width: 991.98px) {
-        .cascading-right {
-          margin-right: 0;
-        }
-      }
-    </style>
-  
-    <!-- Jumbotron -->
-    <div class="container py-4">
-      <div class="row g-0 align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card cascading-right bg-body-tertiary" style="
-              backdrop-filter: blur(30px);
-              ">
-            <div class="card-body p-5 shadow-5 text-center">
-              <h2 class="fw-bold mb-5">Login</h2>
-              <form>
-                <!-- Email input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email address</label>
-                </div>
-  
-                <!-- Password input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Password</label>
-                </div>
-  
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                  <label class="form-check-label" for="form2Example33">
-                    Remember me
-                  </label>
-                </div>
-  
-                <!-- Submit button -->
-                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block mb-4">
-                  Login
-                </button>
-  <p>Don't have an account? <a href="signup.html" style="text-decoration: none;">Signup</a></p>
-                <!-- Register buttons -->
-                <div class="text-center">
-                  <p>or login with:</p>
-                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                    <i class="bi bi-facebook" style="color: rgb(0, 0, 0);"></i>
-                  </button>
-  
-                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                    <i class="bi bi-google" style="color: rgb(0, 0, 0);"></i>
-                  </button>
-  
-                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                    <i class="bi bi-twitter" style="color: rgb(0, 0, 0);"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
+        <div class="header-content">
+          <img
+            src="pic/story.jpg"
+            alt="Bride"
+            class="header-image"
+          />
+          <div class="about-section">
+            <h1 style="color: white; font-size: 60px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Our <span style="color: black;">Story</span> </h1>
+           
           </div>
         </div>
+      </header>
+   
+  <!-- site main content -->
+<section id="content" class="s-content">
+
+    <!-- site main content -->
+    <section id="content" class="s-content">
   
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <img src="pic/wdd.jpg" class="w-100 rounded-4 shadow-4" alt="" />
-        </div>
-      </div>
-    </div> 
-    <!-- Jumbotron -->
-  </section>
-      <!-- Footer Section -->
-      <footer
+      <!-- intro -->
+      <section id="intro" class="s-intro" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <div class="row s-intro__content width-sixteen-col">
+          <div class="column lg-12 s-intro__content-inner grid-block" style="display: flex; flex-direction: column;">
+            <div class="s-intro__content-text" style="overflow: visible;">
+              <div class="s-intro__content-pretitle text-pretitle">Welcome to WhiteAura</div>
+              <h1 class="s-intro__content-title">
+                Unrivaled Scenery, Unforgettable Moments
+              </h1>
+              <div class="attention-getter" style="max-height: none;">
+                <p>
+                  At WhiteAura, we specialize in wedding planning and coordination services tailored to fit any budget, ensuring that everyone can have their dream wedding. Our team is dedicated to creating unforgettable experiences, meticulously planning every detail to perfection.
+                </p>
+                <p>
+                  Our personalized planning approach ensures that every wedding is unique and reflective of each couple's vision. From the initial consultation to the final send-off, we work closely with our clients to understand their preferences and execute their ideas flawlessly.
+                </p>
+                <p>
+                  We believe that every love story is unique, and it deserves to be celebrated in a way that is just as unique. Whether you envision an intimate gathering or a grand celebration, our team is committed to turning your dream into reality.
+                </p>
+                <p>
+                  WhiteAura takes pride in offering a comprehensive range of services, including venue selection, vendor coordination, and on-the-day management, all designed to make your special day as stress-free and enjoyable as possible.
+                </p>
+                <p>
+                  Our experienced planners are well-versed in the latest wedding trends and traditions, ensuring that your wedding is both timeless and contemporary. We strive to create a seamless and enchanting experience for you and your guests.
+                </p>
+                <p>
+                  At WhiteAura, we understand that planning a wedding can be overwhelming. That's why we're here to provide support and guidance every step of the way, ensuring that your wedding day is nothing short of perfect.
+                </p>
+                <p>
+                  Our team is comprised of passionate professionals who are dedicated to making your wedding day as special as possible. We are committed to delivering exceptional service and exceeding your expectations at every turn.
+                </p>
+                <p>
+                  From the moment you contact us, we take the time to get to know you and understand your vision. This personal touch allows us to create a wedding experience that truly reflects who you are as a couple.
+                </p>
+                <p>
+                  Our extensive network of trusted vendors means that we can provide you with a wide variety of options to suit your style and budget. Whether you need a florist, a caterer, or a photographer, we have the connections to make it happen.
+                </p>
+                <p>
+                  At WhiteAura, we are not just wedding planners; we are creators of magical moments. Our goal is to make your wedding day one of the happiest days of your life, filled with love, joy, and unforgettable memories.
+                </p>
+                <p>
+                  We believe in transparency and open communication. Throughout the planning process, we keep you informed and involved, so you can rest assured that every detail is being handled with the utmost care and professionalism.
+                </p>
+                <p>
+                  Our commitment to excellence is evident in every wedding we plan. We take pride in our ability to bring our clients' visions to life, creating beautiful and memorable events that are cherished for a lifetime.
+                </p>
+                <p>
+                  Thank you for considering WhiteAura for your wedding planning needs. We look forward to the opportunity to work with you and create a wedding that is as extraordinary as your love story.
+                </p>
+              </div>
+            </div> <!-- s-intro__content-text -->
+          </div> <!-- s-intro__content-inner -->
+        </div> <!-- s-intro__content -->
+      </section> <!-- end s-intro -->
+    </section> <!-- end site main content -->
+  </section> <!-- end site main content -->
+ 
+    <!-- Footer Section -->
+    <footer
       class="py-4 py-md-5 bg-black position-relative"
       style="
         background-image: url('pic/white.jpeg');
@@ -426,7 +331,7 @@
                   <ul class="m-0 list-unstyled">
                     <li class="mb-1">
                       <a
-                        href="index.html"
+                        href="../index.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Home</a
                       >
@@ -562,13 +467,13 @@
       </div>
     </footer>
 
-  <!-- Section: Design Block -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="css and js/script.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+         
 </body>
 </html>
