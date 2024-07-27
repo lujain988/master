@@ -1,169 +1,228 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>WhiteAura Wedding Planner</title>
 
     <script>
-        document.documentElement.classList.add('js');
+      document.documentElement.classList.add("js");
     </script>
     <link
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css"
-  />
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css and js/styless.css">
+    <link rel="stylesheet" href="css and js/styless.css" />
 
     <!-- favicons -->
     <link rel="stylesheet" href="css and js/aboutstyle.css" />
-</head>
+  </head>
 
-<body id="top">
+  <body id="top">
     <header>
-        <nav id="navbar">
-          <div class="nav-content">
-            <ul class="nav-links left">
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="Services.html">Services</a></li>
-            </ul>
-            <a href="#" class="logo">
-              <img src="pic/logo1.png" alt="WhiteAura" />
-              <span class="logo-text">WhiteAura</span>
-            </a>
-            <ul class="nav-links right">
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="contactus.html">Contact</a></li>
-              <li class="search-container" onclick="expandSearch()">
-                <span class="search-icon">&#128269;</span>
-                <input type="text" placeholder="Search..." class="search-bar" />
-              </li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="signup.html">Register</a></li>
-            </ul>
-            <div class="burger" onclick="toggleNav()">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </nav>
-  
-        <div id="side-nav" class="side-nav">
-          <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
-            >&times;</a
-          >
-          <img src="pic/logo2.png" alt="Alternate Logo" class="side-logo" />
-          <ul class="side-nav-links">
+      <nav id="navbar">
+        <div class="nav-content">
+          <ul class="nav-links left">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="Services.html">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
+          </ul>
+          <a href="#" class="logo">
+            <img src="pic/logo1.png" alt="WhiteAura" />
+            <span class="logo-text">WhiteAura</span>
+          </a>
+          <ul class="nav-links right">
+            <li><a href="Blog.html">Blog</a></li>
             <li><a href="contactus.html">Contact</a></li>
-            <li class="search-container">
+            <li class="search-container" onclick="expandSearch()">
               <span class="search-icon">&#128269;</span>
               <input type="text" placeholder="Search..." class="search-bar" />
             </li>
             <li><a href="login.html">Login</a></li>
             <li><a href="signup.html">Register</a></li>
           </ul>
-        </div>
-        <div class="header-content">
-          <img
-            src="pic/story.jpg"
-            alt="Bride"
-            class="header-image"
-          />
-          <div class="about-section">
-            <h1 style="color: white; font-size: 60px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Our <span style="color: black;">Story</span> </h1>
-           
+          <div class="burger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </div>
-      </header>
-   
-  <!-- site main content -->
-<section id="content" class="s-content">
+      </nav>
+
+      <div id="side-nav" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
+          >&times;</a
+        >
+        <img src="pic/logo2.png" alt="Alternate Logo" class="side-logo" />
+        <ul class="side-nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+          <li class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" placeholder="Search..." class="search-bar" />
+          </li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Register</a></li>
+        </ul>
+      </div>
+      <div class="header-content">
+        <img src="pic/story.jpg" alt="Bride" class="header-image" />
+        <div class="about-section">
+          <h1
+            style="
+              color: white;
+              font-size: 60px;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+            "
+          >
+            Our <span style="color: black">Story</span>
+          </h1>
+        </div>
+      </div>
+    </header>
 
     <!-- site main content -->
     <section id="content" class="s-content">
-  
-      <!-- intro -->
-      <section id="intro" class="s-intro" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-        <div class="row s-intro__content width-sixteen-col">
-          <div class="column lg-12 s-intro__content-inner grid-block" style="display: flex; flex-direction: column;">
-            <div class="s-intro__content-text" style="overflow: visible;">
-              <div class="s-intro__content-pretitle text-pretitle">Welcome to WhiteAura</div>
-              <h1 class="s-intro__content-title">
-                Unrivaled Scenery, Unforgettable Moments
-              </h1>
-              <div class="attention-getter" style="max-height: none;">
-                <p>
-                  At WhiteAura, we specialize in wedding planning and coordination services tailored to fit any budget, ensuring that everyone can have their dream wedding. Our team is dedicated to creating unforgettable experiences, meticulously planning every detail to perfection.
-                </p>
-                <p>
-                  Our personalized planning approach ensures that every wedding is unique and reflective of each couple's vision. From the initial consultation to the final send-off, we work closely with our clients to understand their preferences and execute their ideas flawlessly.
-                </p>
-                <p>
-                  We believe that every love story is unique, and it deserves to be celebrated in a way that is just as unique. Whether you envision an intimate gathering or a grand celebration, our team is committed to turning your dream into reality.
-                </p>
-                <p>
-                  WhiteAura takes pride in offering a comprehensive range of services, including venue selection, vendor coordination, and on-the-day management, all designed to make your special day as stress-free and enjoyable as possible.
-                </p>
-                <p>
-                  Our experienced planners are well-versed in the latest wedding trends and traditions, ensuring that your wedding is both timeless and contemporary. We strive to create a seamless and enchanting experience for you and your guests.
-                </p>
-                <p>
-                  At WhiteAura, we understand that planning a wedding can be overwhelming. That's why we're here to provide support and guidance every step of the way, ensuring that your wedding day is nothing short of perfect.
-                </p>
-                <p>
-                  Our team is comprised of passionate professionals who are dedicated to making your wedding day as special as possible. We are committed to delivering exceptional service and exceeding your expectations at every turn.
-                </p>
-                <p>
-                  From the moment you contact us, we take the time to get to know you and understand your vision. This personal touch allows us to create a wedding experience that truly reflects who you are as a couple.
-                </p>
-                <p>
-                  Our extensive network of trusted vendors means that we can provide you with a wide variety of options to suit your style and budget. Whether you need a florist, a caterer, or a photographer, we have the connections to make it happen.
-                </p>
-                <p>
-                  At WhiteAura, we are not just wedding planners; we are creators of magical moments. Our goal is to make your wedding day one of the happiest days of your life, filled with love, joy, and unforgettable memories.
-                </p>
-                <p>
-                  We believe in transparency and open communication. Throughout the planning process, we keep you informed and involved, so you can rest assured that every detail is being handled with the utmost care and professionalism.
-                </p>
-                <p>
-                  Our commitment to excellence is evident in every wedding we plan. We take pride in our ability to bring our clients' visions to life, creating beautiful and memorable events that are cherished for a lifetime.
-                </p>
-                <p>
-                  Thank you for considering WhiteAura for your wedding planning needs. We look forward to the opportunity to work with you and create a wedding that is as extraordinary as your love story.
-                </p>
+      <!-- site main content -->
+      <section id="content" class="s-content">
+        <!-- intro -->
+        <section
+          id="intro"
+          class="s-intro"
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+        >
+          <div class="row s-intro__content width-sixteen-col">
+            <div
+              class="column lg-12 s-intro__content-inner grid-block"
+              style="display: flex; flex-direction: column"
+            >
+              <div class="s-intro__content-text" style="overflow: visible">
+                <div class="s-intro__content-pretitle text-pretitle">
+                  Welcome to WhiteAura
+                </div>
+                <h1 class="s-intro__content-title">
+                  Unrivaled Scenery, Unforgettable Moments
+                </h1>
+                <div class="attention-getter" style="max-height: none">
+                  <p>
+                    At WhiteAura, we specialize in wedding planning and
+                    coordination services tailored to fit any budget, ensuring
+                    that everyone can have their dream wedding. Our team is
+                    dedicated to creating unforgettable experiences,
+                    meticulously planning every detail to perfection.
+                  </p>
+                  <p>
+                    Our personalized planning approach ensures that every
+                    wedding is unique and reflective of each couple's vision.
+                    From the initial consultation to the final send-off, we work
+                    closely with our clients to understand their preferences and
+                    execute their ideas flawlessly.
+                  </p>
+                  <p>
+                    We believe that every love story is unique, and it deserves
+                    to be celebrated in a way that is just as unique. Whether
+                    you envision an intimate gathering or a grand celebration,
+                    our team is committed to turning your dream into reality.
+                  </p>
+                  <p>
+                    WhiteAura takes pride in offering a comprehensive range of
+                    services, including venue selection, vendor coordination,
+                    and on-the-day management, all designed to make your special
+                    day as stress-free and enjoyable as possible.
+                  </p>
+                  <p>
+                    Our experienced planners are well-versed in the latest
+                    wedding trends and traditions, ensuring that your wedding is
+                    both timeless and contemporary. We strive to create a
+                    seamless and enchanting experience for you and your guests.
+                  </p>
+                  <p>
+                    At WhiteAura, we understand that planning a wedding can be
+                    overwhelming. That's why we're here to provide support and
+                    guidance every step of the way, ensuring that your wedding
+                    day is nothing short of perfect.
+                  </p>
+                  <p>
+                    Our team is comprised of passionate professionals who are
+                    dedicated to making your wedding day as special as possible.
+                    We are committed to delivering exceptional service and
+                    exceeding your expectations at every turn.
+                  </p>
+                  <p>
+                    From the moment you contact us, we take the time to get to
+                    know you and understand your vision. This personal touch
+                    allows us to create a wedding experience that truly reflects
+                    who you are as a couple.
+                  </p>
+                  <p>
+                    Our extensive network of trusted vendors means that we can
+                    provide you with a wide variety of options to suit your
+                    style and budget. Whether you need a florist, a caterer, or
+                    a photographer, we have the connections to make it happen.
+                  </p>
+                  <p>
+                    At WhiteAura, we are not just wedding planners; we are
+                    creators of magical moments. Our goal is to make your
+                    wedding day one of the happiest days of your life, filled
+                    with love, joy, and unforgettable memories.
+                  </p>
+                  <p>
+                    We believe in transparency and open communication.
+                    Throughout the planning process, we keep you informed and
+                    involved, so you can rest assured that every detail is being
+                    handled with the utmost care and professionalism.
+                  </p>
+                  <p>
+                    Our commitment to excellence is evident in every wedding we
+                    plan. We take pride in our ability to bring our clients'
+                    visions to life, creating beautiful and memorable events
+                    that are cherished for a lifetime.
+                  </p>
+                  <p>
+                    Thank you for considering WhiteAura for your wedding
+                    planning needs. We look forward to the opportunity to work
+                    with you and create a wedding that is as extraordinary as
+                    your love story.
+                  </p>
+                </div>
               </div>
-            </div> <!-- s-intro__content-text -->
-          </div> <!-- s-intro__content-inner -->
-        </div> <!-- s-intro__content -->
-      </section> <!-- end s-intro -->
-    </section> <!-- end site main content -->
-  </section> <!-- end site main content -->
- 
+              <!-- s-intro__content-text -->
+            </div>
+            <!-- s-intro__content-inner -->
+          </div>
+          <!-- s-intro__content -->
+        </section>
+        <!-- end s-intro -->
+      </section>
+      <!-- end site main content -->
+    </section>
+    <!-- end site main content -->
+
     <!-- Footer Section -->
     <footer
       class="py-4 py-md-5 bg-black position-relative"
@@ -338,35 +397,22 @@
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="Services.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Services</a
                       >
                     </li>
-                    <li class="mb-1">
-                      <a
-                        href="#!"
-                        class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
-                        >Portfolio</a
-                      >
-                    </li>
-                    <li class="mb-1">
-                      <a
-                        href="#!"
-                        class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
-                        >Testimonials</a
-                      >
-                    </li>
+
                     <li>
                       <a
-                        href="#!"
+                        href="contactus.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Contact Us</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#!"
+                        href="terms.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Terms and Conditions</a
                       >
@@ -380,28 +426,28 @@
                   <ul class="m-0 list-unstyled">
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="weddingplanner.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Planning</a
                       >
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="weddingphoto.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Photographer</a
                       >
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="venueandfarm.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Venue</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#!"
+                        href="venueandfarm.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Farms</a
                       >
@@ -415,14 +461,14 @@
                   <ul class="m-0 list-unstyled">
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="eco_wedding.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Eco-Friendly Weddings</a
                       >
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="cultural.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Cultural Heritage Celebrations</a
                       >
@@ -442,7 +488,6 @@
             </div>
           </div>
         </section>
-
         <!-- Copyright & Links - Bootstrap Brain Component -->
         <div>
           <div class="container border-top border-dark pt-4">
@@ -474,6 +519,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="css and js/script.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-         
-</body>
+  </body>
 </html>

@@ -25,8 +25,10 @@
       href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css"
     />
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="css and js/aboutstyle.css" />
   </head>
   <body>
@@ -34,7 +36,7 @@
       <nav id="navbar">
         <div class="nav-content">
           <ul class="nav-links left">
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="Services.html">Services</a></li>
           </ul>
@@ -43,8 +45,7 @@
             <span class="logo-text">WhiteAura</span>
           </a>
           <ul class="nav-links right">
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="Blog.html">Blog</a></li>
             <li><a href="contactus.html">Contact</a></li>
             <li class="search-container" onclick="expandSearch()">
               <span class="search-icon">&#128269;</span>
@@ -67,11 +68,10 @@
         >
         <img src="pic/logo2.png" alt="Alternate Logo" class="side-logo" />
         <ul class="side-nav-links">
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="Services.html">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="Blog.html">Blog</a></li>
           <li><a href="contactus.html">Contact</a></li>
           <li class="search-container">
             <span class="search-icon">&#128269;</span>
@@ -82,11 +82,7 @@
         </ul>
       </div>
       <div class="header-content">
-        <img
-          src="pic/abouthead.jpg"
-          alt="Bride"
-          class="header-image"
-        />
+        <img src="pic/abouthead.jpg" alt="Bride" class="header-image" />
         <div class="about-section">
           <h1>About Us</h1>
           <div class="icon">
@@ -223,134 +219,277 @@
       </div>
     </div>
     <!-- FAQ Section - Bootstrap Accordion Component -->
-<section class="bg-light py-3 py-md-5">
-  <div class="container">
-    <div class="row gy-5 gy-lg-0 align-items-lg-center">
-      <div class="col-12 col-lg-6">
-        <img class="img-fluid rounded" loading="lazy" src="pic/Qa.jpg" alt="How can we help you?">
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="row justify-content-xl-end">
-          <div class="col-12 col-xl-11">
-            <h2 class="h1 mb-3" style="color: black;">How can we help you?</h2>
-            <p class="lead fs-4 text-secondary mb-5">Find answers to common questions about our wedding planning services. If you need further assistance, please feel free to contact us.</p>
-            <div class="accordion accordion-flush" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    What Services Do You Offer?
-                  </button>
+    <section class="bg-light py-3 py-md-5">
+      <div class="container">
+        <div class="row gy-5 gy-lg-0 align-items-lg-center">
+          <div class="col-12 col-lg-6">
+            <img
+              class="img-fluid rounded"
+              loading="lazy"
+              src="pic/Qa.jpg"
+              alt="How can we help you?"
+            />
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="row justify-content-xl-end">
+              <div class="col-12 col-xl-11">
+                <h2 class="h1 mb-3" style="color: black">
+                  How can we help you?
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>At WhiteAura, we offer a comprehensive range of wedding planning services, including:</p>
-                    <ul>
-                      <li>Full-service wedding planning</li>
-                      <li>Day-of coordination</li>
-                      <li>Venue selection and booking</li>
-                      <li>Decor and floral design</li>
-                      <li>Catering and menu planning</li>
-                      <li>Entertainment and music arrangement</li>
-                      <li>Photography and videography services</li>
-                      <li>Custom wedding invitations and stationery</li>
-                    </ul>
+                <p class="lead fs-4 text-secondary mb-5">
+                  Find answers to common questions about our wedding planning
+                  services. If you need further assistance, please feel free to
+                  contact us.
+                </p>
+                <div class="accordion accordion-flush" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        What Services Do You Offer?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          At WhiteAura, we offer a comprehensive range of
+                          wedding planning services, including:
+                        </p>
+                        <ul>
+                          <li>Full-service wedding planning</li>
+                          <li>Day-of coordination</li>
+                          <li>Venue selection and booking</li>
+                          <li>Decor and floral design</li>
+                          <li>Catering and menu planning</li>
+                          <li>Entertainment and music arrangement</li>
+                          <li>Photography and videography services</li>
+                          <li>Custom wedding invitations and stationery</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        How Far In Advance Should We Book Your Services?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        We recommend booking our services at least 6-12 months
+                        in advance. This allows ample time for thorough planning
+                        and ensures that we can secure the best vendors and
+                        venues for your special day.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        What Is Your Pricing Structure?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          Our pricing structure varies based on the scope of
+                          services required. We offer customizable packages to
+                          suit different needs and budgets. For detailed pricing
+                          information, please contact us directly for a
+                          consultation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseFour"
+                      >
+                        Can You Help With Destination Weddings?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFour"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        Yes, we specialize in planning destination weddings.
+                        Whether you dream of a beach wedding or a romantic
+                        ceremony in a historic city, we can help you find the
+                        perfect location and handle all the logistics to make
+                        your destination wedding a success.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive"
+                        aria-expanded="false"
+                        aria-controls="collapseFive"
+                      >
+                        How Do We Start The Planning Process?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFive"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          To start the planning process, please contact us to
+                          schedule a consultation. During this initial meeting,
+                          we will discuss your vision, preferences, and budget
+                          to create a customized wedding plan that reflects your
+                          unique style and needs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix"
+                        aria-expanded="false"
+                        aria-controls="collapseSix"
+                      >
+                        Do You Offer Day-Of Coordination?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSix"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingSix"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        Yes, we offer day-of coordination services to ensure
+                        that everything runs smoothly on your wedding day. Our
+                        team will be on-site to manage the timeline, coordinate
+                        vendors, and handle any last-minute details, so you can
+                        relax and enjoy your special day.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven"
+                        aria-expanded="false"
+                        aria-controls="collapseSeven"
+                      >
+                        What Safety Measures Do You Have In Place Due To
+                        COVID-19?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSeven"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingSeven"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          Your safety is our priority. We adhere to all local
+                          health guidelines and have implemented additional
+                          safety measures, such as ensuring all vendors wear
+                          masks, providing hand sanitizing stations, and
+                          maintaining social distancing during events.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseEight"
+                        aria-expanded="false"
+                        aria-controls="collapseEight"
+                      >
+                        How Can We Contact You For More Information?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseEight"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingEight"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          You can contact us via email at contact@whiteaura.com
+                          or by phone at (123) 456-7890. We are also available
+                          for consultations by appointment at our office located
+                          at 123 Wedding Lane, Bridal City, ST 12345.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    How Far In Advance Should We Book Your Services?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    We recommend booking our services at least 6-12 months in advance. This allows ample time for thorough planning and ensures that we can secure the best vendors and venues for your special day.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    What Is Your Pricing Structure?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Our pricing structure varies based on the scope of services required. We offer customizable packages to suit different needs and budgets. For detailed pricing information, please contact us directly for a consultation.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Can You Help With Destination Weddings?
-                  </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Yes, we specialize in planning destination weddings. Whether you dream of a beach wedding or a romantic ceremony in a historic city, we can help you find the perfect location and handle all the logistics to make your destination wedding a success.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    How Do We Start The Planning Process?
-                  </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>To start the planning process, please contact us to schedule a consultation. During this initial meeting, we will discuss your vision, preferences, and budget to create a customized wedding plan that reflects your unique style and needs.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Do You Offer Day-Of Coordination?
-                  </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Yes, we offer day-of coordination services to ensure that everything runs smoothly on your wedding day. Our team will be on-site to manage the timeline, coordinate vendors, and handle any last-minute details, so you can relax and enjoy your special day.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSeven">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    What Safety Measures Do You Have In Place Due To COVID-19?
-                  </button>
-                </h2>
-                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Your safety is our priority. We adhere to all local health guidelines and have implemented additional safety measures, such as ensuring all vendors wear masks, providing hand sanitizing stations, and maintaining social distancing during events.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingEight">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                    How Can We Contact You For More Information?
-                  </button>
-                </h2>
-                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>You can contact us via email at contact@whiteaura.com or by phone at (123) 456-7890. We are also available for consultations by appointment at our office located at 123 Wedding Lane, Bridal City, ST 12345.</p>
-                  </div>
-                </div>
+                <!-- End of Accordion -->
               </div>
             </div>
-            <!-- End of Accordion -->
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
     <!-- Footer Section -->
     <footer
       class="py-4 py-md-5 bg-black position-relative"
@@ -525,35 +664,22 @@
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="Services.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Services</a
                       >
                     </li>
-                    <li class="mb-1">
-                      <a
-                        href="#!"
-                        class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
-                        >Portfolio</a
-                      >
-                    </li>
-                    <li class="mb-1">
-                      <a
-                        href="#!"
-                        class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
-                        >Testimonials</a
-                      >
-                    </li>
+
                     <li>
                       <a
-                        href="#!"
+                        href="contactus.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Contact Us</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#!"
+                        href="terms.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Terms and Conditions</a
                       >
@@ -567,28 +693,28 @@
                   <ul class="m-0 list-unstyled">
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="weddingplanner.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Planning</a
                       >
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="weddingphoto.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Photographer</a
                       >
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="venueandfarm.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Venue</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#!"
+                        href="venueandfarm.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Wedding Farms</a
                       >
@@ -602,14 +728,14 @@
                   <ul class="m-0 list-unstyled">
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="eco_wedding.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Eco-Friendly Weddings</a
                       >
                     </li>
                     <li class="mb-1">
                       <a
-                        href="#!"
+                        href="cultural.html"
                         class="link-opacity-75 link-opacity-100-hover text-decoration-none fs-8 link-light"
                         >Cultural Heritage Celebrations</a
                       >
@@ -629,7 +755,6 @@
             </div>
           </div>
         </section>
-
         <!-- Copyright & Links - Bootstrap Brain Component -->
         <div>
           <div class="container border-top border-dark pt-4">

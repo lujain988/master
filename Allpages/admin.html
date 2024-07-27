@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Wedding Planner Admin Dashboard</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <style>
+      body {
+        background-color: #ffffff;
+        color: #333333;
+      }
+
+      .header {
+        background-color: #f8f9fa;
+      }
+
+      .logo span {
+        color: #333333;
+      }
+
+      .search-bar input {
+        background-color: #f1f1f1;
+        color: #333333;
+      }
+
+      .search-bar button {
+        background-color: #e0e0e0;
+        color: #333333;
+      }
+
+      .nav-link {
+        color: #333333;
+      }
+
+      .nav-link:hover {
+        background-color: #e0e0e0;
+      }
+
+      .nav-item .badge-number {
+        background-color: #ff5722;
+      }
+
+      .sidebar {
+        background-color: #f8f9fa;
+      }
+
+      .sidebar-nav .nav-item a {
+        color: #333333;
+      }
+
+      .sidebar-nav .nav-item a:hover {
+        background-color: #e0e0e0;
+      }
+
+      .sidebar-nav .nav-item .collapsed {
+        background-color: #f8f9fa;
+      }
+
+      .sidebar-nav .nav-item .active {
+        background-color: #e0e0e0;
+      }
+
+      .pagetitle {
+        color: #333333;
+      }
+
+      .breadcrumb-item a {
+        color: #333333;
+      }
+
+      .breadcrumb-item.active {
+        color: #000000;
+      }
+
+      .card {
+        background-color: #ffffff;
+        color: #333333;
+        border: 1px solid #e0e0e0;
+      }
+
+      .card-title {
+        color: #333333;
+      }
+
+      .form-group input[type="file"] {
+        background-color: #f1f1f1;
+        color: #333333;
+        border: 1px solid #e0e0e0;
+      }
+
+      .form-group button {
+        background-color: #e0e0e0;
+        color: #333333;
+      }
+
+      .form-group button:hover {
+        background-color: #d0d0d0;
+      }
+
+      .btn-success {
+        background-color: #4caf50;
+        border: none;
+      }
+
+      .btn-warning {
+        background-color: #ff9800;
+        border: none;
+      }
+
+      .btn-danger {
+        background-color: #f44336;
+        border: none;
+      }
+
+      .footer {
+        background-color: #f8f9fa;
+        color: #333333;
+      }
+
+      .back-to-top {
+        background-color: #e0e0e0;
+        color: #333333;
+      }
+
+      .back-to-top:hover {
+        background-color: #d0d0d0;
+      }
+      .logo img {
+        max-height: 53px;
+        margin-right: 6px;
+      }
+
+      .table-responsive {
+        overflow-x: auto;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      @media (max-width: 767px) {
+        .card-body {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .nav-link {
+          display: block;
+        }
+
+        .breadcrumb-item a {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="pic/logo1.png" alt="" />
+          <span class="d-none d-lg-block">WhiteAura Admin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form
+          class="search-form d-flex align-items-center"
+          method="POST"
+          action="#"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Search"
+            title="Enter search keyword"
+          />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span> </a
+            ><!-- End Notification Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
+            >
+              <li class="dropdown-header">
+                You have 4 new notifications
+                <a href="#"
+                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                    >View all</span
+                  ></a
+                >
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all notifications</a>
+              </li>
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span> </a
+            ><!-- End Messages Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages"
+            >
+              <li class="dropdown-header">
+                You have 3 new messages
+                <a href="#"
+                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                    >View all</span
+                  ></a
+                >
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-1.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-2.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-3.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="dropdown-footer">
+                <a href="#">Show all messages</a>
+              </li>
+            </ul>
+            <!-- End Messages Dropdown Items -->
+          </li>
+          <!-- End Messages Nav -->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img src="pic/hala.jpg" alt="Profile" class="rounded-circle" />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                >lujain</span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
+              <li class="dropdown-header">
+                <h6>Kevin Anderson</h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="users-profile.html"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="users-profile.html"
+                >
+                  <i class="bi bi-gear"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="pages-faq.html"
+                >
+                  <i class="bi bi-question-circle"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#events">
+            <i class="bi bi-calendar"></i>
+            <span>Manage Events</span>
+          </a>
+        </li>
+        <!-- End Manage Events Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#clients">
+            <i class="bi bi-person"></i>
+            <span>Manage Clients</span>
+          </a>
+        </li>
+        <!-- End Manage Clients Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#vendors">
+            <i class="bi bi-shop"></i>
+            <span>Manage Vendors</span>
+          </a>
+        </li>
+        <!-- End Manage Vendors Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#content">
+            <i class="bi bi-file-earmark"></i>
+            <span>Manage Content</span>
+          </a>
+        </li>
+        <!-- End Manage Content Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#bookings">
+            <i class="bi bi-journal-bookmark"></i>
+            <span>Manage Bookings</span>
+          </a>
+        </li>
+        <!-- End Manage Bookings Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <section class="section dashboard">
+        <div class="row">
+          <!-- Left side columns -->
+          <div class="col-lg-12">
+            <div class="row">
+              <!-- Total Events Card -->
+              <div class="col-xxl-3 col-md-6">
+                <div class="card info-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Events</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="bi bi-calendar-event"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>45</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Total Events Card -->
+
+              <!-- Total Clients Card -->
+              <div class="col-xxl-3 col-md-6">
+                <div class="card info-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Clients</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>120</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Total Clients Card -->
+
+              <!-- Booking Percentage Card -->
+              <div class="col-xxl-3 col-md-6">
+                <div class="card info-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Booking Percentage</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >
+                        <i class="bi bi-graph-up"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>75%</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Booking Percentage Card -->
+            </div>
+          </div>
+          <!-- End Left side columns -->
+
+          <!-- Manage Events Section -->
+          <div id="events" class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Manage Events</h5>
+                <button
+                  type="button"
+                  class="btn btn-primary mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addEventModal"
+                >
+                  Add Event
+                </button>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Event ID</th>
+                        <th scope="col">Client Name</th>
+                        <th scope="col">Event Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>2024-09-15</td>
+                        <td>Confirmed</td>
+                        <td>
+                          <form class="form-group">
+                            <input type="file" accept="image/*" />
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-sm"
+                            >
+                              Upload
+                            </button>
+                          </form>
+                        </td>
+                        <td>
+                          <button class="btn btn-success btn-sm">
+                            Confirm
+                          </button>
+                          <button class="btn btn-warning btn-sm">Edit</button>
+                          <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                      </tr>
+                      <!-- Add more rows as needed -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Manage Events Section -->
+
+          <!-- Manage Clients Section -->
+          <div id="clients" class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Manage Clients</h5>
+                <button
+                  type="button"
+                  class="btn btn-primary mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addClientModal"
+                >
+                  Record New Client
+                </button>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Client ID</th>
+                        <th scope="col">Client Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>+1234567890</td>
+                        <td>
+                          <form class="form-group">
+                            <input type="file" accept="image/*" />
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-sm"
+                            >
+                              Upload
+                            </button>
+                          </form>
+                        </td>
+                        <td>
+                          <button class="btn btn-success btn-sm">
+                            Confirm
+                          </button>
+                          <button class="btn btn-warning btn-sm">Edit</button>
+                          <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                      </tr>
+                      <!-- Add more rows as needed -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Manage Clients Section -->
+
+          <!-- Manage Vendors Section -->
+          <div id="vendors" class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Manage Vendors</h5>
+                <button
+                  type="button"
+                  class="btn btn-primary mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addVendorModal"
+                >
+                  Record New Vendor
+                </button>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Vendor ID</th>
+                        <th scope="col">Vendor Name</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Flower Shop</td>
+                        <td>Florist</td>
+                        <td>+1234567890</td>
+                        <td>
+                          <form class="form-group">
+                            <input type="file" accept="image/*" />
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-sm"
+                            >
+                              Upload
+                            </button>
+                          </form>
+                        </td>
+                        <td>
+                          <button class="btn btn-success btn-sm">
+                            Confirm
+                          </button>
+                          <button class="btn btn-warning btn-sm">Edit</button>
+                          <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                      </tr>
+                      <!-- Add more rows as needed -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Manage Vendors Section -->
+
+          <!-- Manage Content Section -->
+          <div id="content" class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Manage Content</h5>
+                <button
+                  type="button"
+                  class="btn btn-primary mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addContentModal"
+                >
+                  Add Content
+                </button>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Content ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Home Page Banner</td>
+                        <td>Image</td>
+                        <td>Active</td>
+                        <td>
+                          <form class="form-group">
+                            <input type="file" accept="image/*" />
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-sm"
+                            >
+                              Upload
+                            </button>
+                          </form>
+                        </td>
+                        <td>
+                          <button class="btn btn-success btn-sm">
+                            Confirm
+                          </button>
+                          <button class="btn btn-warning btn-sm">Edit</button>
+                          <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                      </tr>
+                      <!-- Add more rows as needed -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Manage Content Section -->
+
+          <!-- Manage Bookings Section -->
+          <div id="bookings" class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Manage Bookings</h5>
+                <button
+                  type="button"
+                  class="btn btn-primary mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addBookingModal"
+                >
+                  Add Booking
+                </button>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Booking ID</th>
+                        <th scope="col">Client Name</th>
+                        <th scope="col">Event</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Jane Smith</td>
+                        <td>Wedding</td>
+                        <td>2024-10-22</td>
+                        <td>Pending</td>
+                        <td>
+                          <form class="form-group">
+                            <input type="file" accept="image/*" />
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-sm"
+                            >
+                              Upload
+                            </button>
+                          </form>
+                        </td>
+                        <td>
+                          <button class="btn btn-success btn-sm">
+                            Confirm
+                          </button>
+                          <button class="btn btn-warning btn-sm">Edit</button>
+                          <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                      </tr>
+                      <!-- Add more rows as needed -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Manage Bookings Section -->
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- Modals -->
+    <!-- Add Event Modal -->
+    <div
+      class="modal fade"
+      id="addEventModal"
+      tabindex="-1"
+      aria-labelledby="addEventModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="eventName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="eventDate" class="form-label">Event Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="eventDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="clientName" class="form-label">Client Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="clientName"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Event</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Client Modal -->
+    <div
+      class="modal fade"
+      id="addClientModal"
+      tabindex="-1"
+      aria-labelledby="addClientModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addClientModalLabel">
+              Record New Client
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="clientName" class="form-label">Client Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="clientName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="clientEmail" class="form-label">Client Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="clientEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="clientPhone" class="form-label">Client Phone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="clientPhone"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Client</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Vendor Modal -->
+    <div
+      class="modal fade"
+      id="addVendorModal"
+      tabindex="-1"
+      aria-labelledby="addVendorModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addVendorModalLabel">
+              Record New Vendor
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="vendorName" class="form-label">Vendor Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="vendorName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="vendorService" class="form-label">Service</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="vendorService"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="vendorContact" class="form-label">Contact</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="vendorContact"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Vendor</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Content Modal -->
+    <div
+      class="modal fade"
+      id="addContentModal"
+      tabindex="-1"
+      aria-labelledby="addContentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addContentModalLabel">Add Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="contentTitle" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contentTitle"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contentType" class="form-label">Type</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contentType"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contentStatus" class="form-label">Status</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contentStatus"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contentPhoto" class="form-label">Photo</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="contentPhoto"
+                  accept="image/*"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Content</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Booking Modal -->
+    <div
+      class="modal fade"
+      id="addBookingModal"
+      tabindex="-1"
+      aria-labelledby="addBookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addBookingModalLabel">Add Booking</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="bookingClientName" class="form-label"
+                  >Client Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="bookingClientName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="bookingEvent" class="form-label">Event</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="bookingEvent"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="bookingDate" class="form-label">Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="bookingDate"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modals -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>WhiteAura Admin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits"></div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -558,6 +558,40 @@ footer::after {
   justify-content: center;
   align-items: center;
 }
+.small-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin: 0 auto;
+  height: auto;
+}
+
+.table_form .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.table_form .col-md-8, .table_form .col-md-12 {
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+}
+
+.table_form label, .table_form select, .table_form button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.send_btn {
+  width: auto;
+  margin-top: 10px;
+  align-self: center;
+}
+.header-form {
+  width: 30% !important;}
 
 @media (max-width: 768px) {
   .section-content,
@@ -565,7 +599,11 @@ footer::after {
   .contact-info {
     width: 100%;
     margin: 10px 0;
+    
   }
+  .header-form {
+    width: 66% !important;
+}
 
   .location iframe {
     height: 300px;
