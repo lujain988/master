@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Settings - Wedding Planner Admin Dashboard</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <style>
+      body {
+        background-color: #ffffff;
+        color: #333333;
+      }
+
+      .header {
+        background-color: #f8f9fa;
+      }
+
+      .logo span {
+        color: #333333;
+      }
+
+      .search-bar input {
+        background-color: #f1f1f1;
+        color: #333333;
+      }
+
+      .search-bar button {
+        background-color: #e0e0e0;
+        color: #333333;
+      }
+
+      .nav-link {
+        color: #333333;
+      }
+
+      .nav-link:hover {
+        background-color: #e0e0e0;
+      }
+
+      .nav-item .badge-number {
+        background-color: #ff5722;
+      }
+
+      .sidebar {
+        background-color: #f8f9fa;
+      }
+
+      .sidebar-nav .nav-item a {
+        color: #333333;
+      }
+
+      .sidebar-nav .nav-item a:hover {
+        background-color: #e0e0e0;
+      }
+
+      .sidebar-nav .nav-item .collapsed {
+        background-color: #f8f9fa;
+      }
+
+      .sidebar-nav .nav-item .active {
+        background-color: #e0e0e0;
+      }
+
+      .pagetitle {
+        color: #333333;
+      }
+
+      .breadcrumb-item a {
+        color: #333333;
+      }
+
+      .breadcrumb-item.active {
+        color: #000000;
+      }
+
+      .card {
+        background-color: #ffffff;
+        color: #333333;
+        border: 1px solid #e0e0e0;
+      }
+
+      .card-title {
+        color: #333333;
+      }
+
+      .form-group input[type="file"] {
+        background-color: #f1f1f1;
+        color: #333333;
+        border: 1px solid #e0e0e0;
+      }
+
+      .form-group button {
+        background-color: #e0e0e0;
+        color: #333333;
+      }
+
+      .form-group button:hover {
+        background-color: #d0d0d0;
+      }
+
+      .btn-success {
+        background-color: #4caf50;
+        border: none;
+      }
+
+      .btn-warning {
+        background-color: #ff9800;
+        border: none;
+      }
+
+      .btn-danger {
+        background-color: #f44336;
+        border: none;
+      }
+
+      .footer {
+        background-color: #f8f9fa;
+        color: #333333;
+      }
+
+      .back-to-top {
+        background-color: #e0e0e0;
+        color: #333333;
+      }
+
+      .back-to-top:hover {
+        background-color: #d0d0d0;
+      }
+      .logo img {
+        max-height: 53px;
+        margin-right: 6px;
+      }
+
+      .table-responsive {
+        overflow-x: auto;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      @media (max-width: 767px) {
+        .card-body {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .nav-link {
+          display: block;
+        }
+
+        .breadcrumb-item a {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="pic/logo1.png" alt="" />
+          <span class="d-none d-lg-block">WhiteAura Admin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form
+          class="search-form d-flex align-items-center"
+          method="POST"
+          action="#"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Search"
+            title="Enter search keyword"
+          />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span> </a
+            ><!-- End Notification Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
+            >
+              <li class="dropdown-header">
+                You have 4 new notifications
+                <a href="#"
+                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                    >View all</span
+                  ></a
+                >
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all notifications</a>
+              </li>
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span> </a
+            ><!-- End Messages Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages"
+            >
+              <li class="dropdown-header">
+                You have 3 new messages
+                <a href="#"
+                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                    >View all</span
+                  ></a
+                >
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-1.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-2.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-3.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="dropdown-footer">
+                <a href="#">Show all messages</a>
+              </li>
+            </ul>
+            <!-- End Messages Dropdown Items -->
+          </li>
+          <!-- End Messages Nav -->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img src="pic/hala.jpg" alt="Profile" class="rounded-circle" />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                >lujain</span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
+              <li class="dropdown-header">
+                <h6>Kevin Anderson</h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="profileAdmin.html"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="settings.html"
+                >
+                  <i class="bi bi-gear"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="help.html"
+                >
+                  <i class="bi bi-question-circle"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="admin.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="messages.html">
+            <i class="bi bi-chat-left-text"></i>
+            <span>Messages</span>
+          </a>
+        </li>
+        <!-- End Messages Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="profileAdmin.html">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <!-- End Profile Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="settings.html">
+            <i class="bi bi-gear"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+        <!-- End Settings Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="notifications.html">
+            <i class="bi bi-bell"></i>
+            <span>Notifications</span>
+          </a>
+        </li>
+        <!-- End Notifications Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="help.html">
+            <i class="bi bi-question-circle"></i>
+            <span>Help</span>
+          </a>
+        </li>
+        <!-- End Help Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Settings</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Settings</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <section class="section settings">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Account Settings</h5>
+
+            <!-- Settings Form -->
+            <form>
+              <div class="row mb-3">
+                <label for="username" class="col-md-4 col-lg-3 col-form-label"
+                  >Username</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <input
+                    name="username"
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    value="lujain"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="email" class="col-md-4 col-lg-3 col-form-label"
+                  >Email</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    value="lujain@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="phone" class="col-md-4 col-lg-3 col-form-label"
+                  >Phone</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <input
+                    name="phone"
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    value="+1234567890"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="password" class="col-md-4 col-lg-3 col-form-label"
+                  >Password</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <input
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    id="password"
+                  />
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+            <!-- End Settings Form -->
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">Admin Settings</h5>
+
+            <!-- Admin Settings Form -->
+            <form>
+              <div class="row mb-3">
+                <label for="siteName" class="col-md-4 col-lg-3 col-form-label"
+                  >Site Name</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <input
+                    name="siteName"
+                    type="text"
+                    class="form-control"
+                    id="siteName"
+                    placeholder="Enter site name"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="adminEmail" class="col-md-4 col-lg-3 col-form-label"
+                  >Admin Email</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <input
+                    name="adminEmail"
+                    type="email"
+                    class="form-control"
+                    id="adminEmail"
+                    placeholder="Enter admin email"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label
+                  for="userManagement"
+                  class="col-md-4 col-lg-3 col-form-label"
+                  >User Management</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select
+                    name="userManagement"
+                    class="form-select"
+                    id="userManagement"
+                  >
+                    <option selected>Choose...</option>
+                    <option value="1">Enable user registration</option>
+                    <option value="2">Disable user registration</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="siteTheme" class="col-md-4 col-lg-3 col-form-label"
+                  >Site Theme</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select name="siteTheme" class="form-select" id="siteTheme">
+                    <option selected>Choose...</option>
+                    <option value="1">Light</option>
+                    <option value="2">Dark</option>
+                    <option value="3">Auto</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label
+                  for="notificationSettings"
+                  class="col-md-4 col-lg-3 col-form-label"
+                  >Notification Settings</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select
+                    name="notificationSettings"
+                    class="form-select"
+                    id="notificationSettings"
+                  >
+                    <option selected>Choose...</option>
+                    <option value="1">Email Notifications</option>
+                    <option value="2">SMS Notifications</option>
+                    <option value="3">Push Notifications</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label
+                  for="securitySettings"
+                  class="col-md-4 col-lg-3 col-form-label"
+                  >Security Settings</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select
+                    name="securitySettings"
+                    class="form-select"
+                    id="securitySettings"
+                  >
+                    <option selected>Choose...</option>
+                    <option value="1">Enable 2FA</option>
+                    <option value="2">Disable 2FA</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="maintenanceMode"
+                  class="col-md-4 col-lg-3 col-form-label"
+                  >Maintenance Mode</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select
+                    name="maintenanceMode"
+                    class="form-select"
+                    id="maintenanceMode"
+                  >
+                    <option selected>Choose...</option>
+                    <option value="1">Enable</option>
+                    <option value="2">Disable</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="language" class="col-md-4 col-lg-3 col-form-label"
+                  >Language</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select name="language" class="form-select" id="language">
+                    <option selected>Choose...</option>
+                    <option value="1">English</option>
+                    <option value="2">Spanish</option>
+                    <option value="3">French</option>
+                    <option value="4">German</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="timezone" class="col-md-4 col-lg-3 col-form-label"
+                  >Timezone</label
+                >
+                <div class="col-md-8 col-lg-9">
+                  <select name="timezone" class="form-select" id="timezone">
+                    <option selected>Choose...</option>
+                    <option value="1">UTC-12:00</option>
+                    <option value="2">UTC-11:00</option>
+                    <option value="3">UTC-10:00</option>
+                    <option value="4">UTC-09:00</option>
+                    <option value="5">UTC-08:00</option>
+                    <option value="6">UTC-07:00</option>
+                    <option value="7">UTC-06:00</option>
+                    <option value="8">UTC-05:00</option>
+                    <option value="9">UTC-04:00</option>
+                    <option value="10">UTC-03:00</option>
+                    <option value="11">UTC-02:00</option>
+                    <option value="12">UTC-01:00</option>
+                    <option value="13">UTC+00:00</option>
+                    <option value="14">UTC+01:00</option>
+                    <option value="15">UTC+02:00</option>
+                    <option value="16">UTC+03:00</option>
+                    <option value="17">UTC+04:00</option>
+                    <option value="18">UTC+05:00</option>
+                    <option value="19">UTC+06:00</option>
+                    <option value="20">UTC+07:00</option>
+                    <option value="21">UTC+08:00</option>
+                    <option value="22">UTC+09:00</option>
+                    <option value="23">UTC+10:00</option>
+                    <option value="24">UTC+11:00</option>
+                    <option value="25">UTC+12:00</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+            <!-- End Admin Settings Form -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>WhiteAura Admin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits"></div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -317,3 +317,109 @@
   }
 
 })();
+function editContent(id, title, type, status) {
+  document.getElementById('editContentTitle').value = title;
+  document.getElementById('editContentType').value = type;
+  document.getElementById('editContentStatus').value = status;
+  // You can also handle the photo input if needed
+}
+
+function editEvent(id, clientName, eventDate) {
+  document.getElementById('editEventClientName').value = clientName;
+  document.getElementById('editEventDate').value = eventDate;
+  // You can also handle the photo input if needed
+}
+
+function editClient(id, clientName, email, phone, type) {
+  document.getElementById('editClientName').value = clientName;
+  document.getElementById('editClientEmail').value = email;
+  document.getElementById('editClientPhone').value = phone;
+  document.getElementById('editClientType').value = type;
+  // You can also handle the photo input if needed
+}
+
+function editVendor(id, vendorName, service, contact) {
+  document.getElementById('editVendorName').value = vendorName;
+  document.getElementById('editVendorService').value = service;
+  document.getElementById('editVendorContact').value = contact;
+  // You can also handle the photo input if needed
+}
+
+function editBooking(id, clientName, event, date) {
+  document.getElementById('editBookingClientName').value = clientName;
+  document.getElementById('editBookingEvent').value = event;
+  document.getElementById('editBookingDate').value = date;
+  // You can also handle the photo input if needed
+}
+
+function toggleVisibility(button, id) {
+  let row = button.closest('tr');
+  let statusCell = row.cells[3];
+  let badge = statusCell.querySelector('.badge');
+  if (badge.classList.contains('bg-success')) {
+    badge.classList.remove('bg-success');
+    badge.classList.add('bg-secondary');
+    badge.textContent = 'Hidden';
+    button.textContent = 'Show';
+  } else {
+    badge.classList.remove('bg-secondary');
+    badge.classList.add('bg-success');
+    badge.textContent = 'Visible';
+    button.textContent = 'Hide';
+  }
+}
+
+function toggleVisibilityClient(button, id) {
+  let row = button.closest('tr');
+  let statusCell = row.cells[5]; // Assuming the status is in the 6th column for clients
+  let badge = statusCell.querySelector('.badge');
+  if (badge.classList.contains('bg-success')) {
+    badge.classList.remove('bg-success');
+    badge.classList.add('bg-secondary');
+    badge.textContent = 'Hidden';
+    button.textContent = 'Show';
+  } else {
+    badge.classList.remove('bg-secondary');
+    badge.classList.add('bg-success');
+    badge.textContent = 'Visible';
+    button.textContent = 'Hide';
+  }
+}
+
+function confirmBooking(id) {
+  let row = document.getElementById('booking-' + id);
+  let statusCell = row.cells[4];
+  statusCell.textContent = 'Confirmed';
+}
+
+function confirmContent(id) {
+  let row = document.getElementById('content-' + id);
+  let statusCell = row.cells[3];
+  statusCell.textContent = 'Confirmed';
+}
+
+function confirmClient(id) {
+  let row = document.getElementById('client-' + id);
+  let statusCell = row.cells[5]; // Assuming the status is in the 6th column for clients
+  statusCell.textContent = 'Confirmed';
+}
+
+function deleteEvent(id) {
+  document.getElementById('event-' + id).remove();
+}
+
+function deleteClient(id) {
+  document.getElementById('client-' + id).remove();
+}
+
+function deleteVendor(id) {
+  document.getElementById('vendor-' + id).remove();
+}
+
+function deleteContent(id) {
+  document.getElementById('content-' + id).remove();
+}
+
+function deleteBooking(id) {
+  document.getElementById('booking-' + id).remove();
+}

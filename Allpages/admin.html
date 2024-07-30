@@ -15,7 +15,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i"
       rel="stylesheet"
     />
 
@@ -322,11 +322,7 @@
             >
               <li class="dropdown-header">
                 You have 3 new messages
-                <a href="#"
-                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
-                    >View all</span
-                  ></a
-                >
+                <a href="#"> </a>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -396,7 +392,7 @@
               </li>
 
               <li class="dropdown-footer">
-                <a href="#">Show all messages</a>
+                <a href="messages.html">Show all messages</a>
               </li>
             </ul>
             <!-- End Messages Dropdown Items -->
@@ -429,7 +425,7 @@
               <li>
                 <a
                   class="dropdown-item d-flex align-items-center"
-                  href="users-profile.html"
+                  href="profileAdmin.html"
                 >
                   <i class="bi bi-person"></i>
                   <span>My Profile</span>
@@ -442,7 +438,7 @@
               <li>
                 <a
                   class="dropdown-item d-flex align-items-center"
-                  href="users-profile.html"
+                  href="settings.html"
                 >
                   <i class="bi bi-gear"></i>
                   <span>Account Settings</span>
@@ -455,7 +451,7 @@
               <li>
                 <a
                   class="dropdown-item d-flex align-items-center"
-                  href="pages-faq.html"
+                  href="help.html"
                 >
                   <i class="bi bi-question-circle"></i>
                   <span>Need Help?</span>
@@ -531,6 +527,12 @@
           </a>
         </li>
         <!-- End Manage Bookings Nav -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../index.html">
+            <i class="bi bi-arrow-left"></i>
+            <span>Back to website</span>
+          </a>
+        </li>
       </ul>
     </aside>
     <!-- End Sidebar-->
@@ -643,8 +645,8 @@
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="events-table-body">
+                      <tr id="event-1">
                         <td>1</td>
                         <td>John Doe</td>
                         <td>2024-09-15</td>
@@ -661,11 +663,26 @@
                           </form>
                         </td>
                         <td>
-                          <button class="btn btn-success btn-sm">
+                          <button
+                            class="btn btn-success btn-sm"
+                            onclick="confirmBooking(1)"
+                          >
                             Confirm
                           </button>
-                          <button class="btn btn-warning btn-sm">Edit</button>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <button
+                            class="btn btn-warning btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editEventModal"
+                            onclick="editEvent(1, 'John Doe', '2024-09-15')"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            onclick="deleteEvent(1)"
+                          >
+                            Delete
+                          </button>
                         </td>
                       </tr>
                       <!-- Add more rows as needed -->
@@ -699,11 +716,12 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Photo</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="clients-table-body">
+                      <tr id="client-1">
                         <td>1</td>
                         <td>John Doe</td>
                         <td>johndoe@example.com</td>
@@ -719,12 +737,34 @@
                             </button>
                           </form>
                         </td>
+                        <td>Wedding Planner</td>
                         <td>
-                          <button class="btn btn-success btn-sm">
+                          <button
+                            class="btn btn-success btn-sm"
+                            onclick="confirmClient(1)"
+                          >
                             Confirm
                           </button>
-                          <button class="btn btn-warning btn-sm">Edit</button>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <button
+                            class="btn btn-warning btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editClientModal"
+                            onclick="editClient(1, 'John Doe', 'johndoe@example.com', '+1234567890', 'Wedding Planner')"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            onclick="deleteClient(1)"
+                          >
+                            Delete
+                          </button>
+                          <button
+                            class="btn btn-secondary btn-sm"
+                            onclick="toggleVisibilityClient(this, 1)"
+                          >
+                            Hide
+                          </button>
                         </td>
                       </tr>
                       <!-- Add more rows as needed -->
@@ -761,8 +801,8 @@
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="vendors-table-body">
+                      <tr id="vendor-1">
                         <td>1</td>
                         <td>Flower Shop</td>
                         <td>Florist</td>
@@ -779,11 +819,20 @@
                           </form>
                         </td>
                         <td>
-                          <button class="btn btn-success btn-sm">
-                            Confirm
+                          <button
+                            class="btn btn-warning btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editVendorModal"
+                            onclick="editVendor(1, 'Flower Shop', 'Florist', '+1234567890')"
+                          >
+                            Edit
                           </button>
-                          <button class="btn btn-warning btn-sm">Edit</button>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            onclick="deleteVendor(1)"
+                          >
+                            Delete
+                          </button>
                         </td>
                       </tr>
                       <!-- Add more rows as needed -->
@@ -820,29 +869,47 @@
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="content-table-body">
+                      <tr id="content-1">
                         <td>1</td>
                         <td>Home Page Banner</td>
                         <td>Image</td>
-                        <td>Active</td>
+                        <td><span class="badge bg-success">Visible</span></td>
                         <td>
-                          <form class="form-group">
-                            <input type="file" accept="image/*" />
-                            <button
-                              type="submit"
-                              class="btn btn-primary btn-sm"
-                            >
-                              Upload
-                            </button>
-                          </form>
+                          <img
+                            src="assets/img/sample.jpg"
+                            alt="Photo"
+                            class="img-thumbnail"
+                            width="50"
+                          />
                         </td>
                         <td>
-                          <button class="btn btn-success btn-sm">
+                          <button
+                            class="btn btn-success btn-sm"
+                            onclick="confirmContent(1)"
+                          >
                             Confirm
                           </button>
-                          <button class="btn btn-warning btn-sm">Edit</button>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <button
+                            class="btn btn-warning btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editContentModal"
+                            onclick="editContent(1, 'Home Page Banner', 'Image', 'Visible')"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            onclick="deleteContent(1)"
+                          >
+                            Delete
+                          </button>
+                          <button
+                            class="btn btn-secondary btn-sm"
+                            onclick="toggleVisibility(this, 1)"
+                          >
+                            Hide
+                          </button>
                         </td>
                       </tr>
                       <!-- Add more rows as needed -->
@@ -880,8 +947,8 @@
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="bookings-table-body">
+                      <tr id="booking-1">
                         <td>1</td>
                         <td>Jane Smith</td>
                         <td>Wedding</td>
@@ -899,11 +966,26 @@
                           </form>
                         </td>
                         <td>
-                          <button class="btn btn-success btn-sm">
+                          <button
+                            class="btn btn-success btn-sm"
+                            onclick="confirmBooking(1)"
+                          >
                             Confirm
                           </button>
-                          <button class="btn btn-warning btn-sm">Edit</button>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <button
+                            class="btn btn-warning btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editBookingModal"
+                            onclick="editBooking(1, 'Jane Smith', 'Wedding', '2024-10-22')"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            onclick="deleteBooking(1)"
+                          >
+                            Delete
+                          </button>
                         </td>
                       </tr>
                       <!-- Add more rows as needed -->
@@ -1024,6 +1106,14 @@
                   id="clientPhone"
                   required
                 />
+              </div>
+              <div class="mb-3">
+                <label for="clientType" class="form-label">Client Type</label>
+                <select class="form-select" id="clientType" required>
+                  <option value="Wedding Planner">Wedding Planner</option>
+                  <option value="Venue and Farm">Venue and Farm</option>
+                  <option value="Photographer">Photographer</option>
+                </select>
               </div>
               <button type="submit" class="btn btn-primary">Add Client</button>
             </form>
@@ -1212,6 +1302,72 @@
     </div>
     <!-- End Modals -->
 
+    <!-- Edit Content Modal -->
+    <div
+      class="modal fade"
+      id="editContentModal"
+      tabindex="-1"
+      aria-labelledby="editContentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editContentModalLabel">Edit Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="editContentTitle" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editContentTitle"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editContentType" class="form-label">Type</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editContentType"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editContentStatus" class="form-label">Status</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editContentStatus"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editContentPhoto" class="form-label">Photo</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="editContentPhoto"
+                  accept="image/*"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="copyright">
@@ -1225,8 +1381,9 @@
     <a
       href="#"
       class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
